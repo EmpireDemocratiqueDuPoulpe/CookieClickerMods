@@ -48,6 +48,8 @@ LuckyCookieStat.launch = function () {
 					l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "inherit";
 				}
 			}
+
+			l("lucky-cookie-stat-box").style.top = `${window.scrollY + l("cookies").getBoundingClientRect().top}px`;
 		};
 
 		// Hooks
