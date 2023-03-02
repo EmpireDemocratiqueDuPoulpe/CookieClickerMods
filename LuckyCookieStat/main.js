@@ -31,6 +31,8 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.update = function () {
 			const wallet = Game.cookies || 1;
 			const CpS = Game.cookiesPs || 1;
+			console.log(wallet);
+			console.log(cps);
 
 			const ratio = Math.min((wallet / CpS), 0);
 			if (ratio !== LuckyCookieStat.computedValue) {
