@@ -37,14 +37,16 @@ LuckyCookieStat.launch = function () {
 
 		// Set the update function
 		LuckyCookieStat.update = function () {
-			const wallet = Game.cookies || 1;
-			const CpS = Game.cookiesPs || 1;
+			const wallet = Game.cookies || 0;
+			const CpS = Game.cookiesPs || 0;
 
-			const ratio = Math.max((wallet / CpS), 0);
-			if (ratio !== LuckyCookieStat.computedValue) {
-				LuckyCookieStat.computedValue = ratio;
-				l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
-				l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "inherit";
+			if (CpS > 0) {
+				const ratio = wallet / CpS;
+				if (ratio !== LuckyCookieStat.computedValue) {
+					LuckyCookieStat.computedValue = ratio;
+					l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
+					l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "inherit";
+				}
 			}
 		};
 
