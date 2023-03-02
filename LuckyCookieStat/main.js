@@ -29,10 +29,10 @@ LuckyCookieStat.launch = function () {
 
 		// Set the update function
 		LuckyCookieStat.update = function () {
-			const wallet = Game.cookies;
-			const CpS = Game.cookiesPs;
+			const wallet = Game.cookies || 1;
+			const CpS = Game.cookiesPs || 1;
 
-			const ratio = wallet / CpS;
+			const ratio = Math.min((wallet / CpS), 0);
 			if (ratio !== LuckyCookieStat.computedValue) {
 				LuckyCookieStat.computedValue = ratio;
 				l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
