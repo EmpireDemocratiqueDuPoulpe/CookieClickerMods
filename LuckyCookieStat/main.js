@@ -14,7 +14,7 @@ LuckyCookieStat.launch = function () {
 			#lucky-cookie-stat-box {
 				position: absolute;
 				top: 5px;
-				left: 5px;
+				right: 5px;
 				color: gray;
 				z-index: 999999;
 			}
@@ -40,7 +40,7 @@ LuckyCookieStat.launch = function () {
 			const wallet = Game.cookies || 1;
 			const CpS = Game.cookiesPs || 1;
 
-			const ratio = Math.min((wallet / CpS), 0);
+			const ratio = Math.max((wallet / CpS), 0);
 			if (ratio !== LuckyCookieStat.computedValue) {
 				LuckyCookieStat.computedValue = ratio;
 				l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
