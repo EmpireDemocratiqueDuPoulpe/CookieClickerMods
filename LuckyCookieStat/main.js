@@ -10,7 +10,15 @@ LuckyCookieStat.loaded = false;
 LuckyCookieStat.launch = function () {
 	LuckyCookieStat.init = function () {
 		// Set the mod CSS
-		LuckyCookieStat.styles = ``;
+		LuckyCookieStat.styles = `
+			#lucky-cookie-stat-box {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				color: gray;
+				z-index: 999999;
+			}
+		`;
 		CCSE.AddStyles(LuckyCookieStat.styles);
 
 		// Create the HTML components
@@ -31,14 +39,12 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.update = function () {
 			const wallet = Game.cookies || 1;
 			const CpS = Game.cookiesPs || 1;
-			console.log(wallet);
-			console.log(cps);
 
 			const ratio = Math.min((wallet / CpS), 0);
 			if (ratio !== LuckyCookieStat.computedValue) {
 				LuckyCookieStat.computedValue = ratio;
 				l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
-				l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "white";
+				l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "inherit";
 			}
 		};
 
