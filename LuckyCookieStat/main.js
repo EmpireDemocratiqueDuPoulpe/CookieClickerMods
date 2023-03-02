@@ -45,8 +45,10 @@ LuckyCookieStat.launch = function () {
 
 		// End of initialization
 		LuckyCookieStat.loaded = true;
-		if (Game.prefs.popups) Game.Popup(`${LuckyCookieStat.name} loaded!`);
-		else Game.Notify(`${LuckyCookieStat.name} loaded!`, "", "", 1, 1);
+		const loadMessage = `${LuckyCookieStat.name} loaded!`;
+		if (Game.prefs.popups) Game.Popup(loadMessage);
+		else Game.Notify(loadMessage, "", "", 1, 1);
+		console.log(loadMessage);
 	};
 
 	// Register the mod
