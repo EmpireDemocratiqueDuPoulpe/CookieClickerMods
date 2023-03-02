@@ -2,7 +2,7 @@
  "Name": "Lucky Cookie Stat",
  "ID": "LuckyCookieStat",
  "Author": "Empire Démocratique du Poulpe",
- "Description": "Shows the ratio between your balance and your CpS. Useful to gain the most from Lucky golden cookies.",
+ "Description": "Shows the ratio of your balance to your CpS. Useful for getting the most out of Lucky Gold Cookies.",
  "ModVersion": "1.0",
  "GameVersion": 2.048,
  "Date": "02/03/2023",
