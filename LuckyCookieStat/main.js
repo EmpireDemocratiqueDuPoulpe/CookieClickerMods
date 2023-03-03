@@ -2,7 +2,7 @@
 if(LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.0";
+LuckyCookieStat.version = "1.1";
 LuckyCookieStat.gameVersion = "2.048";
 LuckyCookieStat.loaded = false;
 
@@ -13,10 +13,34 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.styles = `
 			#lucky-cookie-stat-box {
 				position: absolute;
-				top: 5px;
-				right: 5px;
-				color: gray;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				text-align: center;
+				font-size: 0.8em;
+				background: rgba(0, 0, 0, 0.2);
+				border: 1px rgba(0, 0, 0, 0.5) solid;
+				color: white;
 				z-index: 999999;
+			}
+			
+			#lucky-cookie-stat-bar {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				background: #008000;
+				z-index: -1;
+			}
+			
+			#lucky-cookie-stat-bar-indicator {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 60%;
+				border-right: 1px #E24848 solid;
 			}
 		`;
 		CCSE.AddStyles(LuckyCookieStat.styles);
@@ -25,9 +49,17 @@ LuckyCookieStat.launch = function () {
 		const stats = document.createElement("div");
 		stats.setAttribute("id", "lucky-cookie-stat-box");
 
+		const statsBar = document.createElement("div");
+		statsBar.setAttribute("id", "lucky-cookie-stat-bar");
+
+		const statsBarIndicator = document.createElement("div");
+		statsBarIndicator.setAttribute("id", "lucky-cookie-stat-bar-indicator");
+
 		const statsText = document.createElement("span");
 		statsText.setAttribute("id", "lucky-cookie-stat-text");
 
+		stats.append(statsBar);
+		stats.append(statsBarIndicator);
 		stats.append(statsText);
 		l("sectionLeft").append(stats);
 
@@ -45,11 +77,11 @@ LuckyCookieStat.launch = function () {
 				if (ratio !== LuckyCookieStat.computedValue) {
 					LuckyCookieStat.computedValue = ratio;
 					l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
-					l("lucky-cookie-stat-text").style.color = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "green" : "inherit";
+
+					l("lucky-cookie-stat-bar").style.width = `${Math.min(Math.round(ratio / 100), 100)}%`;
+					l("lucky-cookie-stat-bar").style.background = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "#008000" : "#800000";
 				}
 			}
-
-			l("lucky-cookie-stat-box").style.top = `${window.scrollY + l("cookies").getBoundingClientRect().top}px`;
 		};
 
 		// Hooks
