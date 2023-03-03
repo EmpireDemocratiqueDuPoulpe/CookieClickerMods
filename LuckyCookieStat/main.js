@@ -17,6 +17,7 @@ LuckyCookieStat.launch = function () {
 				bottom: 0;
 				left: 0;
 				text-align: center;
+				font-size: 0.8em;
 				background: rgba(0, 0, 0, 0.2);
 				border: 1px rgba(0, 0, 0, 0.5) solid;
 				color: white;
@@ -58,6 +59,7 @@ LuckyCookieStat.launch = function () {
 		statsText.setAttribute("id", "lucky-cookie-stat-text");
 
 		stats.append(statsBar);
+		stats.append(statsBarIndicator);
 		stats.append(statsText);
 		l("sectionLeft").append(stats);
 
