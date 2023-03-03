@@ -43,6 +43,25 @@ LuckyCookieStat.launch = function () {
 				width: 60%;
 				border-right: 1px #E24848 solid;
 			}
+			
+			#lucky-cookie-stat-bar {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				background: #008000;
+				z-index: -1;
+			}
+			
+			#lucky-cookie-stat-bar-indicator {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 60%;
+				border-right: 1px #E24848 solid;
+			}
 		`;
 		CCSE.AddStyles(LuckyCookieStat.styles);
 
