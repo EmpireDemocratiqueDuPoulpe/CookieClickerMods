@@ -22,7 +22,7 @@ LuckyCookieStat.launch = function () {
 				background: rgba(0, 0, 0, 0.2);
 				border: 1px rgba(0, 0, 0, 0.5) solid;
 				color: white;
-				z-index: 999999;
+				z-index: 5;
 			}
 			
 			#lucky-cookie-stat-bar {
@@ -92,7 +92,7 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.loaded = true;
 		const loadMessage = `${LuckyCookieStat.name} loaded!`;
 		if (Game.prefs.popups) Game.Popup(loadMessage);
-		else Game.Notify(loadMessage, "", [0, 0, ], 2, true);
+		else Game.Notify(loadMessage, "", LuckyCookieStat.noteIcon, 2, true);
 		console.log(loadMessage);
 	};
 
