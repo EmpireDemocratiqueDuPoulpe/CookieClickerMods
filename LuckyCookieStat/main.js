@@ -77,7 +77,7 @@ LuckyCookieStat.launch = function () {
 					l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
 
 					l("lucky-cookie-stat-bar").style.width = `${Math.min(Math.round(ratio / 100), 100)}%`;
-					l("lucky-cookie-stat-bar").style.background = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "#800000" : "#008000";
+					l("lucky-cookie-stat-bar").style.background = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "#008000" : "#800000";
 				}
 			}
 		};
