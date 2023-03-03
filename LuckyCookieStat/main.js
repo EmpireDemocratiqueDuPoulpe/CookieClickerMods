@@ -2,7 +2,7 @@
 if(LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.1b";
+LuckyCookieStat.version = "1.2";
 LuckyCookieStat.gameVersion = "2.048";
 LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "note_icon.png"] : "";
 LuckyCookieStat.loaded = false;
