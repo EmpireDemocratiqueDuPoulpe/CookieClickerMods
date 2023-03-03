@@ -2,8 +2,9 @@
 if(LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.1";
+LuckyCookieStat.version = "1.2";
 LuckyCookieStat.gameVersion = "2.048";
+LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "note_icon.png"] : "";
 LuckyCookieStat.loaded = false;
 
 // Mod definition
@@ -21,7 +22,26 @@ LuckyCookieStat.launch = function () {
 				background: rgba(0, 0, 0, 0.2);
 				border: 1px rgba(0, 0, 0, 0.5) solid;
 				color: white;
-				z-index: 999999;
+				z-index: 5;
+			}
+			
+			#lucky-cookie-stat-bar {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				background: #008000;
+				z-index: -1;
+			}
+			
+			#lucky-cookie-stat-bar-indicator {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 60%;
+				border-right: 1px #E24848 solid;
 			}
 			
 			#lucky-cookie-stat-bar {
@@ -91,7 +111,7 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.loaded = true;
 		const loadMessage = `${LuckyCookieStat.name} loaded!`;
 		if (Game.prefs.popups) Game.Popup(loadMessage);
-		else Game.Notify(loadMessage, "", "", 1, 1);
+		else Game.Notify(loadMessage, "", LuckyCookieStat.noteIcon, 2, true);
 		console.log(loadMessage);
 	};
 
