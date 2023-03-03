@@ -2,8 +2,9 @@
 if(LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.1";
+LuckyCookieStat.version = "1.1b";
 LuckyCookieStat.gameVersion = "2.048";
+LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "assets/note_icon.png"] : "";
 LuckyCookieStat.loaded = false;
 
 // Mod definition
@@ -91,7 +92,7 @@ LuckyCookieStat.launch = function () {
 		LuckyCookieStat.loaded = true;
 		const loadMessage = `${LuckyCookieStat.name} loaded!`;
 		if (Game.prefs.popups) Game.Popup(loadMessage);
-		else Game.Notify(loadMessage, "", "", 1, 1);
+		else Game.Notify(loadMessage, "", [0, 0, ], 2, true);
 		console.log(loadMessage);
 	};
 
