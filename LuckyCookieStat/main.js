@@ -4,7 +4,7 @@ LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
 LuckyCookieStat.version = "1.1b";
 LuckyCookieStat.gameVersion = "2.048";
-LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "assets/note_icon.png"] : "";
+LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "note_icon.png"] : "";
 LuckyCookieStat.loaded = false;
 
 // Mod definition
