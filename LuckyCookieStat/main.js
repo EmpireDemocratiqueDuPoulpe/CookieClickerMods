@@ -33,7 +33,7 @@ LuckyCookieStat.launch = function () {
 				z-index: -1;
 			}
 			
-			#lucky-cookie-stat-bar {
+			#lucky-cookie-stat-bar-indicator {
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -80,8 +80,6 @@ LuckyCookieStat.launch = function () {
 					l("lucky-cookie-stat-bar").style.background = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "#800000" : "#008000";
 				}
 			}
-
-			l("lucky-cookie-stat-box").style.top = `${window.scrollY + l("cookies").getBoundingClientRect().top}px`;
 		};
 
 		// Hooks
