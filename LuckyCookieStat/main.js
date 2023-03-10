@@ -1,15 +1,22 @@
 // Object instantiation
-if(LuckyCookieStat === undefined) var LuckyCookieStat = {};
+if (LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.2";
+LuckyCookieStat.version = "1.3";
 LuckyCookieStat.gameVersion = "2.048";
-LuckyCookieStat.noteIcon = (CCSE && CCSE.Steam) ? [0, 0, CCSE.GetModPath("LuckyCookieStat") + "note_icon.png"] : "";
-LuckyCookieStat.loaded = false;
+LuckyCookieStat.gameLanguage = null;
+LuckyCookieStat.isLoaded = false;
+
+// Fetch CCSE if not installed
+if (typeof CCSE == "undefined") Game.LoadMod("https://klattmose.github.io/CookieClicker/CCSE.js");
 
 // Mod definition
 LuckyCookieStat.launch = function () {
 	LuckyCookieStat.init = function () {
+		// Get game language
+		try { LuckyCookieStat.gameLanguage = window.localStorage.getItem("CookieClickerLang"); }
+		catch { LuckyCookieStat.gameLanguage = "EN"; }
+
 		// Set the mod CSS
 		LuckyCookieStat.styles = `
 			#lucky-cookie-stat-box {
@@ -96,7 +103,7 @@ LuckyCookieStat.launch = function () {
 				const ratio = wallet / CpS;
 				if (ratio !== LuckyCookieStat.computedValue) {
 					LuckyCookieStat.computedValue = ratio;
-					l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio)}`;
+					l("lucky-cookie-stat-text").innerHTML = `x${Math.round(ratio).toLocaleString(LuckyCookieStat.gameLanguage)}`;
 
 					l("lucky-cookie-stat-bar").style.width = `${Math.min(Math.round(ratio / 100), 100)}%`;
 					l("lucky-cookie-stat-bar").style.background = (LuckyCookieStat.optimalRatio <= LuckyCookieStat.computedValue) ? "#008000" : "#800000";
@@ -107,12 +114,14 @@ LuckyCookieStat.launch = function () {
 		// Hooks
 		Game.registerHook("logic", LuckyCookieStat.update);
 
+		// Add the mod version to the Stats page
+		Game.customStatsMenu.push(function() {
+			CCSE.AppendStatsVersionNumber(LuckyCookieStat.name, LuckyCookieStat.version);
+		});
+
 		// End of initialization
-		LuckyCookieStat.loaded = true;
-		const loadMessage = `${LuckyCookieStat.name} loaded!`;
-		if (Game.prefs.popups) Game.Popup(loadMessage);
-		else Game.Notify(loadMessage, "", LuckyCookieStat.noteIcon, 2, true);
-		console.log(loadMessage);
+		LuckyCookieStat.isLoaded = true;
+		console.log(`${LuckyCookieStat.name} isLoaded!`);
 	};
 
 	// Register the mod
@@ -121,8 +130,8 @@ LuckyCookieStat.launch = function () {
 	}
 };
 
-
-if (!LuckyCookieStat.loaded) {
+// Load up everything
+if (!LuckyCookieStat.isLoaded) {
 	if (CCSE && CCSE.isLoaded) {
 		LuckyCookieStat.launch();
 	} else {
