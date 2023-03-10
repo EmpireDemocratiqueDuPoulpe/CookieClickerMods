@@ -2,9 +2,9 @@
 if (BipBoop === undefined) var BipBoop = {};
 BipBoop.id = "BipBoop";
 BipBoop.name = "Bip Boop";
-BipBoop.version = "1.0";
+BipBoop.version = "1.1";
 BipBoop.gameVersion = "2.048";
-BipBoop.soundsList = [ "metal_pipe" ];
+BipBoop.soundsList = [ "metal_pipe", "aeugh" ];
 BipBoop.sounds = {};
 BipBoop.isLoaded = false;
 
