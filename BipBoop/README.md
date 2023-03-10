@@ -8,7 +8,7 @@ Ajoute des sons personnalisés pour l'amélioration "Sélecteur de son de cookie
 ## Liens / Links
 Web: [https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/BipBoop/main.js](https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/BipBoop/main.js)
 
-Steam: []()
+Steam: [https://steamcommunity.com/sharedfiles/filedetails/?id=2944854798](https://steamcommunity.com/sharedfiles/filedetails/?id=2944854798)
 
 ## Notes de changement / Changelogs
 ### 1.0 - 10/03/2023
