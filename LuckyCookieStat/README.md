@@ -7,6 +7,7 @@ Affiche le rapport entre votre solde de cookies et votre CpS. Utile pour tirer l
 
 ## Liens / Links
 Web: [https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/LuckyCookieStat/main.js](https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/LuckyCookieStat/main.js)
+
 Steam: [https://steamcommunity.com/sharedfiles/filedetails/?id=2941685090](https://steamcommunity.com/sharedfiles/filedetails/?id=2941685090)
 
 ## Notes de changement / Changelogs
