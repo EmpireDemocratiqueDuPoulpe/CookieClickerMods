@@ -1,0 +1,14 @@
+{
+	"Name": "Bip Boop",
+	"ID": "BipBoop",
+	"Author": "Empire Démocratique du Poulpe",
+	"Description": "Adds some sounds for the \"Golden cookie sound selector\" upgrade.",
+	"ModVersion": 1.0,
+	"GameVersion": 2.048,
+	"Date": "10/03/2023",
+	"Dependencies": [
+		"CCSE"
+	],
+	"Disabled": 0,
+	"AllowSteamAchievs": 1
+}
