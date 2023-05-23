@@ -2,8 +2,8 @@
 if (LuckyCookieStat === undefined) var LuckyCookieStat = {};
 LuckyCookieStat.id = "LuckyCookieStat";
 LuckyCookieStat.name = "Lucky Cookie Stat";
-LuckyCookieStat.version = "1.3";
-LuckyCookieStat.gameVersion = "2.048";
+LuckyCookieStat.version = "1.4";
+LuckyCookieStat.gameVersion = "2.052";
 LuckyCookieStat.gameLanguage = null;
 LuckyCookieStat.isLoaded = false;
 

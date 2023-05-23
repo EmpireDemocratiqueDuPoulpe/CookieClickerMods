@@ -11,6 +11,9 @@ Web: [https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/BipBoop/mai
 Steam: [https://steamcommunity.com/sharedfiles/filedetails/?id=2944854798](https://steamcommunity.com/sharedfiles/filedetails/?id=2944854798)
 
 ## Notes de changement / Changelogs
+### 1.2 - 23/05/2023
+- Update to the newest game version.
+
 ### 1.1 - 10/03/2023
 - Added the "Aeugh" sound.
 

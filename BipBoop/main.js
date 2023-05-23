@@ -2,8 +2,8 @@
 if (BipBoop === undefined) var BipBoop = {};
 BipBoop.id = "BipBoop";
 BipBoop.name = "Bip Boop";
-BipBoop.version = "1.1";
-BipBoop.gameVersion = "2.048";
+BipBoop.version = "1.2";
+BipBoop.gameVersion = "2.052";
 BipBoop.soundsList = [ "metal_pipe", "aeugh" ];
 BipBoop.sounds = {};
 BipBoop.isLoaded = false;

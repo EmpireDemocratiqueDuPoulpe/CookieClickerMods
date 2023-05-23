@@ -11,6 +11,9 @@ Web: [https://empiredemocratiquedupoulpe.github.io/CookieClickerMods/LuckyCookie
 Steam: [https://steamcommunity.com/sharedfiles/filedetails/?id=2941685090](https://steamcommunity.com/sharedfiles/filedetails/?id=2941685090)
 
 ## Notes de changement / Changelogs
+### 1.4 - 23/05/2023
+- Update to the newest game version.
+
 ### 1.3 - 10/03/2023
 - Remove the note at startup.
 - The number is now formatted according to the game language.
